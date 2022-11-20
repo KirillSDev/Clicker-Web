@@ -1,15 +1,71 @@
 * {
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
     text-align: center;
+    font-family: 'Crafty Girls', cursive;
+    /* background: rgb(255,191,53);
+    background: linear-gradient(354deg, rgba(255,191,53,1) 0%, rgba(220,193,112,1) 100%); */
 }
 .content {
-    height: 100vh;
-    display: flex;
+    display: grid;
+    gap: 700px;
     justify-content: center;
-    align-items: center;
 }
+#score-1 {
+    color: #161414;
+    font-weight: 800;
+    text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
+    font-size: 30px;
+    position: absolute;
+    display: none;
+    user-select: none;
+    animation: moveUpAnimation 1s infinite;
+}
+@keyframes moveUpAnimation {
+    from {top: 500px;}
+    to {top: 0px;}
+}
+@keyframes transperentAnimation {
+    from {opacity: 100%;}
+    to {opacity: 0%;}
+}
+
+.up-text {
+text-align: center;
+margin-top: 80px;
+color: #000000;
+text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
+transition: text-shadow 1s;
+animation: shadowAnimation 1.5s infinite;
+}
+@keyframes shadowAnimation {
+    from {text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;}
+    to {text-shadow: -5px 5px 0px #00e6e6, -10px 10px 0px #01cccc, -15px 15px 0px #00bdbd;    }
+}
+.quantity {
+    font-size: 100px;
+    color: rgb(0, 0, 0);
+}
+
+.container {
+width: 100vw;
+position: fixed;
+bottom: 40%;
+}
+
+/* .svg-line {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+
+} */
+
 #img {
     transition-property: height, width;
     transition-duration: 0.1s;
@@ -18,4 +74,9 @@ body {
 @keyframes move {
 from {transform: rotate(0deg);}
 to {transform: rotate(360deg);}
+}
+.footer-link {
+    color: black;
+    text-decoration: none;
+    font-size: 6px;
 }
